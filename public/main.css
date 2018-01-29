@@ -1,0 +1,12 @@
+html,
+body {
+	background-image: linear-gradient(to bottom, #FAFAFA, #F0EAE4);
+	height: 100%;
+}
+
+h1,
+h2 {
+	font-family: 'Raleway', sans-serif;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
