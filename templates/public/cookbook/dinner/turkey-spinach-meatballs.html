@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% set title = "Turkey Spinach Meatballs" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "¼ cup olive oil",
+        "½ small onion, chopped",
+        "1 garlic finely chopped",
+        "1 teaspoon dried oregano",
+        "¼ teaspoon crushed red pepper flakes",
+        "Kosher salt and freshly ground black pepper",
+        "2 tablespoons tomato paste",
+        "1 28-oz. can whole peeled tomatoes",
+        "Nonstick vegetable oil spray",
+        "1 large egg, beaten to blend",
+        "¼ small onion, finely chopped",
+        "1 clove garlic finely chopped",
+        "1½ pound ground turkey, preferably 93% lean or less",
+        "1 10-oz. package frozen chopped spinach, thawed, squeezed in paper towels to remove excess moisture",
+        "½ cup finely grated Parmesan or Pecorino",
+        "½ cup plain dried breadcrumbs",
+        "2 tablespoons chopped fresh flat-leaf parsley",
+        "1 teaspoon fennel seeds",
+        "1 teaspoon finely grated lemon zest",
+        "1 teaspoon kosher salt",
+        "2 tablespoons olive oil",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "<b>Sauce</b>",
+        "Heat oil in a medium saucepan over medium heat. Cook onion, stirring often, until soft but not brown, about 5 minutes. Add garlic, oregano, and red pepper flakes; season with salt and pepper and cook, stirring, until fragrant, about 1 minute. Add tomato paste and 1 Tbsp. water and cook, stirring, until tomato paste coats onion and begins to darken, about 3 minutes.",
+        "Add tomatoes to saucepan, crushing with your hands as you add them. Bring to a boil, reduce heat, and gently simmer until slightly thickened, 20–25 minutes; season with salt and pepper.",
+        "<b>Meatballs</b>",
+        "Preheat broiler. Cover a rimmed baking sheet with foil and coat with nonstick spray.",
+        "Using your hands or a fork, gently mix egg, onion, garlic, turkey, spinach, Parmesan, breadcrumbs, parsley, fennel seeds, lemon zest, and salt in a large bowl just until combined. Scoop out turkey mixture by the ¼-cupful and form into balls (you should have about 20). Place on prepared baking sheet, spacing 2” apart; brush with oil.",
+        "Broil meatballs, turning often, until browned all over and cooked through, 15–18 minutes. Add to marinara sauce.",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

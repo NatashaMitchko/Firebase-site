@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% set title = "Slow-Roast Gochujang Chicken" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "1 3½–4-lb. whole chicken",
+        "1 tbsp Diamond Crystal or 1¾ tsp. Morton kosher salt, plus more",
+        "Freshly ground black pepper",
+        "5 tbsp gochujang",
+        "¼ cup plus 2 Tbsp. extra-virgin olive oil",
+        "2 heads of garlic",
+        '1½ " piece fresh ginger',
+        '1½ lb baby Yukon Gold potatoes (about 1½ " in diameter)',
+        "5 scallions",
+        "2 limes",
+        "2 tsp honey",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Place a rack in middle of oven; preheat to 300°. Pat chicken dry with paper towels. Place on a small rimmed baking sheet. Season 1 3½–4-lb. whole chicken all over with 1 Tbsp. Diamond Crystal or 1¾ tsp. Morton kosher salt and lots of freshly ground black pepper, making sure to season the inside cavity.",
+        'Whisk 5 Tbsp. gochujang and ¼ cup extra-virgin olive oil in a medium bowl until combined. Finely grate 3 garlic cloves into gochujang oil. Peel 1 ½" piece fresh ginger then grate into gochujang oil; whisk to combine.',
+        "Cut what’s left of the head of garlic in half crosswise. Repeat with second head of garlic. Stuff 2 garlic halves inside cavity of chicken. Tie legs together with kitchen twine. Using a pastry brush, brush half of gochujang oil over chicken. Toss potatoes and remaining 2 garlic halves and 2 Tbsp. extra-virgin olive oil in remaining gochujang oil until well coated.",
+        'Arrange potatoes in a 12" cast-iron skillet, scooting them toward edges of pan to make space for chicken. Nestle garlic halves (cut sides down) in center of skillet. Place chicken over garlic. If any potatoes have found their way under the chicken, use tongs to arrange them around it (they won’t cook at the same rate if they’re under the chicken).',
+        "Roast chicken and potatoes, turning potatoes once or twice to coat in juices and oil that accumulate in pan, until potatoes are very tender when pressed with the back of a spoon, and chicken skin is deep reddish-golden brown in color, 2½–3 hours. When you wiggle the legs of the chicken, they should feel loose in the joints, meaning the meat is tender. Transfer chicken to a cutting board and let rest 10–15 minutes.",
+        "Meanwhile, use the back of a large spoon or a potato masher to gently smash potatoes in skillet, exposing some of their flesh to juices underneath so they can soak them up. Thinly slice 5 scallions on a long diagonal. Cut 2 limes in half. Cut 1 half into wedges and set aside. Stir 2 tsp. honey and juice of remaining lime half into potatoes. Scatter sliced scallions over potatoes.",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

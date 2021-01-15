@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% set title = "Oliver's Chicken Stew" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "1 3½ to 4-pound chicken, rinsed",
+        "8 cups chicken stock",
+        "Salt and freshly ground black pepper",
+        "5 medium carrots, thickly sliced",
+        "4 medium leeks, tender white part only, thickly sliced",
+        "4 celery stalks, thickly sliced",
+        "4 cloves garlic, smashed",
+        "1 teaspoon chopped thyme",
+        "1 bay leaf",
+        "3 sprigs flat-leaf parsley",
+        "½ cup stellini (tiny star pasta)",
+        "3 tablespoons unsalted butter",
+        "1 tablespoon lemon juice",
+        "1 tablespoon chopped tarragon",
+        "¼ cup chopped flat-leaf parsley",
+        "6 slices toasted Italian bread",
+        "¼ cup extra-virgin olive oil",
+        "½ cup grated Parmesan cheese",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Place the chicken in a 6-quart pot, breast side down. Add the stock, lightly seasoned with salt and pepper, and bring to a boil, skimming often. Add the carrots, leeks, celery, garlic, thyme, bay leaf and parsley and simmer. After 15 minutes, flip the chicken and cook for 25 minutes more. Remove the chicken and let cool.",
+        "Discard the bay leaf and parsley. Strain the vegetables, reserving the vegetables and the liquid. Return the stock to the pot; bring to a simmer. Pull the chicken meat off the bones. Add the pasta to the stock and cook for 3 minutes, then whisk in the butter, lemon juice, tarragon and parsley. Add the chicken and vegetables; heat through.",
+        "To serve, place a piece of toast in the bottom of each of 6 bowls, then drizzle with olive oil and sprinkle with Parmesan. Top with stew.",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

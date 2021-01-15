@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% set title = "Gluten-Free Blueberry Pancakes" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "100 g frozen blueberries",
+        "1 egg",
+        "1 egg white",
+        "60 g oats",
+        "1/2 teaspoon baking power",
+        "1 tablespoon maple syrup",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Weigh out the blueberries in a blender cup and microwave for one minute until defrosted.",
+        "Add the rest of the ingredients and blend until smooth. If the batter is too thin add some water or oat milk or almond milk.",
+        "Cook batter like regular pancakes."
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

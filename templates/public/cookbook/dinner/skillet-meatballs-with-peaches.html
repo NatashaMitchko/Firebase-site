@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% set title = "Skillet Meatballs with Peaches Basil and Lime" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "1½ tablespoons finely grated or minced fresh ginger",
+        "3 garlic cloves, grated or minced",
+        "1¼ teaspoon ground cumin, plus more for serving",
+        "1¼ teaspoons kosher salt, plus more as needed",
+        "1 pound ground pork (or turkey or chicken, or vegan meat)",
+        "⅓ cup panko or other plain bread crumbs",
+        "3 tablespoons finely chopped fresh basil, plus basil leaves for serving",
+        "2 tablespoons extra-virgin olive oil",
+        "2 tablespoons wine (dry white, rosé or red), or use broth, orange juice or water",
+        "2 cups diced ripe peaches or nectarines (about 3)",
+        "¼ cup thinly sliced white or red onion, or scallions",
+        "1 lime, halved",
+        "White rice or coconut rice, rice noodles, or crisp salad greens, for serving",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "In a large bowl, mix together ginger, garlic, cumin and salt. Add pork, panko and basil. Using your hands, gently mix everything together, making sure not to overwork the mixture. (Otherwise, the meatballs get tough.) Form into 1¼-inch balls.",
+        "Heat a large skillet over medium-high, then add the oil and let it heat up until it thins out. Add meatballs in one layer. Cook, turning and shaking the pan, until meatballs are browned all over, 5 to 7 minutes.",
+        "Pour the wine into the skillet and move meatballs over to one side of the pan, scraping up the browned bits. Add peaches, a pinch of salt and 2 tablespoons water to the empty side of pan. When peaches are simmering, cover the pan, lower the heat to medium, and let cook until the meatballs are no longer pink at their centers, and the peaches juicy and tender, about 5 to 10 minutes longer.",
+        "Uncover the pan. If the mixture seems too runny, let it cook down for another minute or so. The peaches should break down into a chunky sauce. Hard or unripe peaches may take a few extra minutes.",
+        "Add the onions to the pan and mix them in so they wilt slightly. Squeeze lime juice all over everything, then taste and add salt and lime juice, as needed. Sweeter peaches will need more lime juice, tart ones, less.",
+        "Serve the meatballs sprinkled with more cumin and garnished with torn basil leaves, over the rice or greens.",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

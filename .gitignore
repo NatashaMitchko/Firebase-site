@@ -6,6 +6,18 @@ yarn-debug.log*
 yarn-error.log*
 firebase-debug.log*
 
+base.html
+env/
+public/Cookbook.pdf
+public/base.html
+public/puzzle.html
+public/script.js
+public/test.html
+public/to-copy.html
+test.html
+
+*/cookbook/*
+
 # Firebase cache
 .firebase/
 

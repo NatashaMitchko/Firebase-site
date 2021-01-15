@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% set title = "One-pan Lemon Chicken" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "1 tablespoon olive oil",
+        "salt and pepper to taste",
+        "1 pound chicken breasts or thighs",
+        "1 onion, diced",
+        "4 cloves garlic, chopped",
+        "1 cup long grain rice",
+        "2 cups chicken broth",
+        "1 teaspoon oregano",
+        "1 lemon, juice and zest",
+        "2 heads garlic, top ¼ cut off",
+        "1 teaspoon olive oil",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Heat the oil in a large oven safe pan over medium-high heat, season the chicken with salt and pepper and cook in the pan until the chicken is golden brown, about 2-4 minutes per side, before setting aside.",
+        "Add the onion to the pan and cook until tender and lightly golden brown, about 3-5 minutes. Add the garlic and rice to the pan and cook until fragrant, about a minute.",
+        "Add the broth and deglaze the pan by scraping up the brown bits on the bottom of the pan with a wooden spoon while the broth simmers.",
+        "Mix in the oregano and the lemon, add the chicken and heads of garlic with the cut sides up and drizzle the oil on the garlic before covering the pan and roasting in a preheated 375F/190C oven until the rice is cooked and the garlic is a light golden brown and tender, about 30-45 minutes.",
+        "Squeeze the garlic out of the heads and mix it into the rice serving the chicken on the lemon garlic rice.",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}
