@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% set title = "Stuffed Mushrooms" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "1 Large Stuffing Mushrooms",
+        "2 Tbsp Olive Oil",
+        "2 Tbsp Butter",
+        "2 Cloves Garlic (Minced)",
+        "2 Green Onions (Minced) -- Substitute White Onion"
+        "3/4 TODO Cups Sherry or White Cooking Wine"
+        "Juice of 1 Lemon (Fresh Only)",
+        "Salt + Pepper to taste",
+        "1 Cup Italian Bread Crumbs (4C brand or similar)",
+        "½ Cup Grate Parm Cheese",
+        "½ Cup Grated Fontina Cheese"
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Preheat Oven to 350F",
+        "Warm a non-stick pan to medium low-heat (4/10)",
+        "Prepare Mushrooms Caps: Wash and Dry Mushrooms, Remove and Chop Stems",
+        "Coat Mushroom caps with olive oil and place in shallow baking tray in a single layer",
+        "Once warm, add onion, garlic, olive oil, and butter to the pan",
+        "Sautee onions until slightly beginning to carmel-ize.",
+        "Add chopped mushroom stems to the pan and cook for 2-3 minutes, mixing together the items in the pan",
+        "Remove pan from heat and Stir in 1/4 cup of Sherry or White Wine, Lemon Juice, and bread crumbs. Stir Well!",
+        "Finally, stir in the Parm cheese and half of the total Fontina Cheese. Mixture should be sticky for stuffing the mushroom caps. Add more liquid if too dry.",
+        "Spoon filling out of pan into mushroom caps. Top the stuffed mushrooms with the remaining Fontina cheese",
+        "Bake 8-12 minutes until cheese melts <b>and</b> the caps are cooked.",
+        "Serve"
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}
