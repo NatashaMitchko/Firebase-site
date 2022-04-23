@@ -17,6 +17,7 @@ public/to-copy.html
 test.html
 
 */cookbook/*
+templates/*
 
 # Firebase cache
 .firebase/
