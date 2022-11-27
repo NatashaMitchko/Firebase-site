@@ -3,7 +3,9 @@
 HTML for cookbooks is rendered with `staticjinja build` at project root.
 Templates are stored in the templates directory and rendered to `cookbook` (not checked in)
 
-From project rott
+Create a new file in `templates/` to add a new recepie.
+
+From project root
 ```
 $ cp public/to-copy.html templates/public/cookbook/<category>/<new-recipe-name>.html
 $ vim $_
