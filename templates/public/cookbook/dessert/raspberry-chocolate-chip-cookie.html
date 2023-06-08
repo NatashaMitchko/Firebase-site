@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% set title = "Raspberry Chocolate Chip Cookies" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "3/4 cup unsalted butter, browned",
+        "3/4 cup brown sugar, packed",
+        "1/4 cup raspberry jam",
+        "1 egg + 1 egg yolk",
+        "1 3/4 cup all purpose flour",
+        "1/2 teaspoon baking soda",
+        "4 teaspoons raspberry powder",
+        "1/2 teaspoon salt",
+        "1 cup semisweet chocolate chips",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Brown the butter, then chill until set.",
+        "Mix the brown sugar into the chilled brown butter, then add the raspberry jam and egg.",
+        "Whisk the flour, salt, baking soda and raspberry powder together.",
+        "Mix in half the flour then slowly add the rest stopping if the dough gets dry. Before it's 100% mixed add the chocolate chips.",
+        "Portion the dough out into 12 normal sized cookies or 24 mini cookies. Put on a cookie sheet and REFRIDGERATE for at least 12 hours.",
+        "When ready to bake, preheat the oven to 350.",
+        "Put the refrigerated cookies onto a sheet and squish them to cookie shape, they wont spread out much.",
+        "Bake for like 8-12 minutes? or until they're cooked."
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

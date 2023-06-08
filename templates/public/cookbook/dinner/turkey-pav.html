@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% set title = "Turkey Pav" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "3 tablespoons grapeseed oil",
+        "chicken or vegetable stock",
+        "Kosher salt",
+        "1 white onion, chopped",
+        "2 cloves garlic, finely chopped",
+        "1½-inch piece ginger, finely chopped",
+        "1 serrano chile, seeded and finely chopped",
+        "1 beefsteak tomato, chopped",
+        "⅓ cup frozen peas (optional)",
+        "¼ teaspoon turmeric",
+        "1½ teaspoons garam masala",
+        "1 lime, cut into 4 wedges",
+        "handful of cilantro, chopped",
+        "¼ red onion, finely chopped (about 2 tablespoons)",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Heat 2 tablespoons oil in a cast-iron skillet over medium-high heat, then add pulled turkey and let cook until it becomes light brown and crisp in places, stirring occasionally. Season lightly with salt, then scrape meat, and as much of the browned pieces at the bottom of the pan as you can, into a small bowl.",
+        "In the same pan, without washing it, add the chopped onion and 1 tablespoon oil, and turn the heat down to medium, scraping up any remaining turkey meat and mixing it into the onions. Sauté until the onion is very soft and translucent, about 5 minutes, then add the garlic, ginger, serrano chile and turmeric and sauté for another 2 minutes. Add turkey, tomatoes, peas and ⅓ cup water, and stir well. When almost all of the liquid has evaporated, and the peas, if using, are tender (about 8 minutes), add garam masala and a generous squeeze of lime juice. Mix well and loosen with a splash of water if the pan is starting to get dry. Simmer for 2 minutes. Taste and adjust with salt and more lime, if needed, then turn off the heat.",
+        "Transfer the turkey into a serving bowl and serve with onion, cilantro and lime in separate bowls on the side.",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

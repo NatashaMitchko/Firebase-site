@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% set title = "Leek Risotto with Lemon and Peas" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+"2 medium leeks",
+"1 Tbsp olive oil",
+"2 cloves garlic",
+"1 ½ cups arborio rice",
+"¼ cup white wine",
+"4 cups warm vegetable broth",
+"½ cup grated parmesan cheese (optional)",
+"½ cup frozen peas",
+"2 Tbsp soft goat cheese",
+"salt, pepper, lemon to taste"
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+"Chop Leeks",
+"Cook leeks in hot oil until soft and bright green, add garlic and cook 3 minutes. Remove half of the leeks and save for later, leaving the other half in the pan.",
+"Add dry rice to the pan and cook for about 2 minutes, stirring frequently, until the rice is slightly opaque on the outside but uncooked on the inside.",
+"Add wine to the pot and simmer until absorbed. Slowly add the vegetable broth, adding ½ cup at a time. Wait until broth has almost completely absorbed before adding another ½ cup. Begin tasting the rice after 15 minutes or so. Once it is al dente (a little bit chewy), stop adding broth (you may not need the full amount).",
+"Stir in parmesan until melted. Stir in frozen peas, goat cheese, and reserved leeks. Taste and add salt, pepper, and lemon juice to suit your taste."
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

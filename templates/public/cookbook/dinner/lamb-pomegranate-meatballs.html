@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% set title = "Lamb Meatballs with Pomegranate Sauce" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "1 lb. ground lamb",
+        "1 shallot",
+        "2-3 garlic cloves, grated",
+        "2 eggs",
+        "1 cup chopped herbs (parsley, mint, etc.)",
+        "1 tsp ground cumin",
+        "1 tsp coriander",
+        "1 tsp cinnamon",
+        "1 tsp salt",
+        "1 tsp ground pepper",
+        "1/2 cup toasted breadcrumbs (panko)",
+        "<b>For the Sauce</b>",
+        "1 shallot",
+        "1 1/2 cup pomegranate juice",
+        "1 tbsp maple syrup",
+        "1 tsp balsamic vinegar",
+        "1/8 tsp allspice",
+        "salt and pepper"
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "In a small pan saute shallot in a drizzle of olive oil, over medium heat for 3 minutes, or until tender. Add pomegranate juice, a pinch of salt and pepper, maple, balsamic, and allspice. Bring to a simmer, turn heat to medium, then simmer uncovered for 15-20 minutes or until it reduces to ½ cup. Turn heat off.",
+        "Place meatball ingredients in a medium bowl and using hands, combine well, adding enough breadcrumbs to make them easy to roll into balls.",
+        "Using wet hands, roll into ping-pong sized balls (about 1 ¾- 2 inches in diameter) and set aside. You should have about 12-16.",
+        "Cook the meat balls in a large pan with olive oil",
+        "Pour glaze over top and garnish with fresh pomegranate seeds and herbs."
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

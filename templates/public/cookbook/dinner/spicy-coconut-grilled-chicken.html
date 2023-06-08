@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% set title = "" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "1 3-inch piece fresh ginger",
+        "5 garlic cloves",
+        "¾ cup coconut milk",
+        "¼ cup hot chili paste (such as sambal oelek)",
+        "¼ cup fresh lime juice",
+        "2 tbsp light brown sugar",
+        "1 tbsp Diamond Crystal or 1¾ tsp. Morton kosher salt",
+        "2 tbsp vegetable oil, plus more for grill",
+        "2lb skinless, boneless chicken thighs",
+        "½ cup cilantro leaves with tender stems",
+        "Lime wedges (for serving)",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Prepare a grill for medium heat. Finely grate ginger and garlic into a medium bowl. Add coconut milk, chili paste, lime juice, brown sugar, salt, and 2 Tbsp. oil and whisk to combine. Add chicken and toss to coat. Let sit at least 15 minutes or up to 4 hours.",
+        "Remove chicken from marinade, letting excess drip back into bowl, and transfer to a rimmed baking sheet. Pour marinade into a small saucepan. Bring to a boil, then reduce heat to medium-low and simmer, stirring occasionally, until slightly reduced and thick enough to coat the back of a spoon, 2–3 minutes.",
+        "Clean and generously oil grate of grill (if there are a few flare-ups while you do so, not to worry, they will burn off). Grill chicken, turning once and basting occasionally with marinade, until you see some good grill marks and chicken is cooked through, 8–10 minutes.",
+        "Transfer chicken to a platter. Brush with remaining marinade. Top with cilantro and serve with lime wedges alongside.",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

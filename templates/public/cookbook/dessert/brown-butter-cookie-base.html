@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% set title = "Brown Butter Cookie Base" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "3/4 cup unsalted butter, browned",
+        "3/4 cup brown sugar, packed",
+        "1/4 cup granulated sugar",
+        "1 egg + 1 egg yolk",
+        "2 teaspoons vanilla extract",
+        "1 3/4 cup all purpose flour",
+        "1/2 teaspoon baking soda",
+        "1/2 teaspoon salt",
+        "1 cup mixins",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+"Brown the butter over medium heat, stirring constantly until the butter begins to foam and turns a golden brown, emitting a nutty aroma. Make sure you only brown the butter lightly. When butter browns the liquid evaporates off which can dry out your dough. As soon as the butter starts to turn brown and smell nutty, take it off the heat to prevent any more liquid from escaping. Take butter off the heat and allow to set up.",
+"In a large mixing bowl combine the cooled brown butter, brown sugar, and white sugar. Beat until mixed together. Add in the egg, egg yolk, and vanilla extract. Mix well.",
+"In separate bowl mix together the flour, salt and baking soda. Mix half the dry ingredients into the wet until everything comes together. Slowly add in the remaining flour a little bit at a time. Fold in the mixins. Do not over mix.",
+"Scoop the cookie dough into 1 Tablespoon size balls and refrigerate the cookie dough for at least a half hour, or overnight.",
+"Bake at 350°F for 11-13 minutes or until the edges are set and the centers have puffed up but are still gooey."
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}
