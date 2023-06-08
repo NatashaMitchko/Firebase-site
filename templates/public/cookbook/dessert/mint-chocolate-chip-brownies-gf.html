@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% set title = "Gluten Free Mint Chocolate Chip Brownies" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "80 g tapioca flour",
+        "60 g buckwheat flour",
+        "60 g millet flour",
+        "1 1/4 teaspoon xanthum gum",
+        "5 g salt",
+        "40 g malted milk powder",
+        "40 g dutch process cocoa powder",
+        "1/2 cup boiling water",
+        "284 g dark chocolate wafers",
+        "12 tablespoons unsalted butter",
+        "1/2 cup neutral oil (I used olive oil)",
+        "200 g granulated sugar",
+        "200 g dark brown sugar",
+        "3 eggs"
+        "2 egg yolk",
+        "3 teaspoons vanilla",
+        "150 g milk chocolate",
+        "170 g mini mint chocolate chips, plus more for sprinkling on top"
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+            "Mix the tapioca flour, buckwheat flour, millet flour, xanthum gum, salt and malted milk powder together. Set aside.",
+            "In a large heatproof bowl, whisk the cocoa powder in the hot water until no lumps. Put the bowl over a double boiler and add in dark chocolate wafers, butter and oil. Mix until melted, then take off heat and let cool slightly.",
+            "Add the sugar to the slightly cooled chocolate mixture. Whisk until it gets weird. Then add the eggs and whisk until it stops being weird.",
+            "Add the vanilla to the chocolate mixture.",
+            "Fold in the milk chocolate wafers and the mini mint chocolate chips.",
+            "Put batter in a 9x13 pan and sprinkle some more mini mint chips on top if you want.",
+            "Bake at 350 for 30ish minutes? or until done, maybe 35-40 minutes. I didn't pay attention to this part."
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}
