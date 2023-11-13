@@ -7,7 +7,7 @@ Create a new file in `templates/` to add a new recepie.
 
 From project root
 ```
-$ cp public/to-copy.html templates/public/cookbook/<category>/<new-recipe-name>.html
+$ touch templates/public/cookbook/<category>/<new-recipe-name>.html
 $ vim $_
 $ vim public/cookbook/index.html
 $ source env/bin/activate && staticjinja build
