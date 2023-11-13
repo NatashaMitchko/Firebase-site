@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% set title = "Apple Hand Pie" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+        "215 grams (2 small) Pink Lady apples, peeled",
+        "50 grams granulated sugar",
+        "½ tsp. ground cinnamon",
+        "1/8 tsp. ground allspice",
+        "1/8 tsp. ground nutmeg",
+        "1 Tbsp. unsalted butter",
+        "2 Tsp. cornstarch or tapioca startch",
+        "1 box puff pastry",
+        "egg for egg wash",
+        "demerara sugar"
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Preheat oven to 400°, take puff pastry out of freezer. Put pan in oven to preheat.",
+        "Cut apples into 1-2 cm square pieces ",
+        "Melt butter in pan and add apples, sugar and spices.",
+        "Cook on medium until the apples have softened and released some of their juices. Increase the heat and boil the juices for 2-3 minutes.",
+        "Dissolve the starch in about a tablespoon of cold water. Add to the pan and mix throughly until thickened. Remove from the heat and allow to cool.",
+        "Roll out puff pastry into large rectangles. Egg wash the edges and put a blog of cooked apples in the middle. Fold over and fork the edges. Egg wash the top and sprinkle with demerara sugar.",
+        "Bake for 25-30 minutes. Remove from oven and allow to cool before eating."
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}
