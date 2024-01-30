@@ -15,4 +15,4 @@ $ firebase deploy
 ```
 
 
-I host my personal website [natashamitchko.com](https://www.natashamitchko.com) with firebase.
+I host my personal website [natashamitchko.com](https://natashamitchko.com/) with firebase.
