@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% set title = "" %}
+{% set version = "Natasha's " %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}<span class="toggles" style="display: inline;">{{version}}</span>{{title}}{% endblock %}
+
+{% block toggle %}
+    <button popovertargetaction="toggle" id="versiontoggle">Change Version</button>
+{% endblock %}
+
+{% block ingredients %}
+<div class="toggles" style="display: none;">
+    {% for ingredient in [
+            "original",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+</div>
+<div class="toggles" style="display: inline;">
+    {% for ingredient in [
+            "natasha's",
+        ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block instructions %}
+<div class="toggles" style="display: none;">
+    {% for p in [
+            "original",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+</div>
+<div class="toggles" style="display: inline;">
+    {% for p in [
+            "natasha's",
+        ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+</div>
+{% endblock %}
