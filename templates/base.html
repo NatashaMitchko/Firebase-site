@@ -4,9 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
+    <script src="/main.js
+    " type="text/javascript"></script>
 </head>
 <body>
     <a href="/cookbook">← Back to Cookbook</a>
+    {% block toggle %}{% endblock %}
     <h1>{% block heading %}{% endblock %}</h1>
     <ul>
         {% block ingredients %}{% endblock %}
