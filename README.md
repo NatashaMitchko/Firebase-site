@@ -15,8 +15,6 @@ $ vim public/cookbook/index.html
 $ cp recipe_base_versioned.html templates/public/cookbook/<category>/<new-recipe-name>.html
 $ vim $_
 $ vim public/cookbook/index.html
-$ source env/bin/activate && staticjinja build
-$ firebase deploy
 ```
 
 ## Build static pages
