@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% set title = "Curry Chicken Salad" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+            "2 celery stalks",
+            "2 boiled chicken breast, cut up and/or shredded",
+            "1/2 red onion, finely chopped",
+            "2 scallions, chopped",
+            "1 green apple, cut in small cubes",
+            "1/2 cup mayo",
+            "juice of half a lemon",
+            "1 1/2 tsp curry powder",
+            "1/2 tsp tumeric",
+            "1/2 tsp cayenne pepper",
+    ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Mix the mayo, lemon juice and spices.",
+        "Add everything else and mix throughly. Serve on a sandwich or wrap."
+    ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}
