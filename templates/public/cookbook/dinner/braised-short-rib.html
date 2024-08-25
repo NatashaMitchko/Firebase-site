@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% set title = "Braised Short Rib" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+            "4 lbs. bone-in short rib",
+            "3-4 big carrots",
+            "2 medium yellow onions or 1 large",
+            "3-4 stalks of celery",
+            "2 Tbsp tomato paste",
+            "1 750ml bottle dry red wine, (cabernet, merlot)",
+            "veggie or beef stock",
+            "1/4 cup flour"
+    ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Pat dry and score the fat cap of the short ribs in criss-cross style. Add to a deep oven dish, fat side up. Brush with olive oil and add salt and pepper.",
+        "Roast in the oven at 425 for 20 minutes.",
+        "While the meat is roasting, chop the carrots, onions and celery into small-medium sized pieces. Add to a deep pan on the stove (this will eventually be the pan that goes into the oven) with some olive oil and sautee (20 mins).",
+        "Create a well in the veggies and add more oil and the tomato paste. Cook the tomato paste in the oil for 1-2 minutes then stir into the veggies. Turn the heat to high and when heated, add 3/4 of the wine.",
+        "Keep wine at a simmer until it has reduced slightly.",
+        "In a separate pan, dry toast the flour over medium heat - add oil to the flour and cook until the flour-oil paste is slightly toasted. Pour this mixture into the veggie-wine pan.",
+        "This will thicken the sauce significantly, add broth/stock until the sauce is slightly thinner than you want it.",
+        "Remove the meat from the oven and take it out of the pan being careful to leave the excess fat behind. Roll the meat in the veggie sauce and nestle into the pan fat side up. Add broth until the level is about halfway up the ribs.",
+        "Cook in the oven at 350 for at least 4 hours with the lid on the pan.",
+        "When done, remove the meat from the sauce and scoop any excess oil out. Blend the veggies into a sauce (immersion blender). Take the meat off the bone if desired and cut into portions.",
+        "Mix meat into the sauce and serve.",
+    ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

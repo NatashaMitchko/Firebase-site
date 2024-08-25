@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% set title = "Pink Pasta a.k.a Beet & Goat Cheese Pasta" %}
+{% block title %}{{title}}{% endblock %}
+{% block heading %}{{title}}{% endblock %}
+{% block ingredients %}
+    {% for ingredient in [
+            "3 medium-large sized beets",
+            "4 oz goat cheese",
+            "1 clove garlic",
+            "1 pinch cayenne pepper",
+            "Olive oil",
+            "pistachios toasted and chopped",
+            "fresh mint leaves for garnish"
+    ] %}
+        <li>{{ingredient}}</li>
+    {% endfor %}
+{% endblock %}
+{% block instructions %}
+    {% for p in [
+        "Cook pasta.",
+        "Blend cooked beets, goat cheese, olive oil and garlic with pasta water until smooth.",
+        "Garnish with pistachios and mint leaves."
+    ] %}
+        <p>{{p}}</p>
+    {% endfor %}
+{% endblock %}

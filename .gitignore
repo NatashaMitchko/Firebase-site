@@ -8,6 +8,7 @@ public/test.html
 public/to-copy.html
 test.html
 public/assets/*
+map_config/*
 
 */cookbook/*
 public/main.js

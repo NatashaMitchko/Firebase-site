@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: #adff2f;
+    /* text-shadow: 0 0 5px green; */
+}
+
+a {
+    color: greenyellow;
+}
+
+img {
+    /* width: 200px; /* You can set the dimensions to whatever you want */
+    height: 400px;
+    object-fit: contain;
+}
+
+::selection {
+    background: blue;
+    color: white;
+    text-shadow: none;
+  }
+
+td, tr {
+    text-align: start;
+}
+
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.invert {
+    background-color: greenyellow;
+    color: black;
+}
+
+.outline {
+    border: 2px solid greenyellow;
+}
