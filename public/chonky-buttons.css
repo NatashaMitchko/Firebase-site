@@ -1,0 +1,122 @@
+.control-panel {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem;
+  }
+  
+  .chonky-btn-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+  }
+  
+  .hidden-input {
+    visibility: hidden;
+    display: none;
+  }
+  
+  .chonky-btn {
+    padding: .25rem;
+    background-color: #5a795d;
+    border: 2px solid #a8ffb1;
+    border-radius: 16px;
+    transform-style: preserve-3d;
+    transition: transform 50ms ease;
+    transform: translate3d(0, 0, 1rem);
+    cursor: pointer;
+    min-width: 8rem;
+    min-height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chonky-btn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #88de90;
+    border-radius: inherit;
+    border: 2px solid #6dba75;
+    transform: translate3d(0, 0.75rem, -1rem);
+    transition: transform 50ms ease;
+    z-index: -1;
+  }
+  
+  .chonky-btn svg.icon {
+    width: 3rem;
+    height: 3rem;
+    stroke: #111;
+    fill: #222;
+  }
+  
+  .text-label {
+    margin-top: 1rem;
+    text-align: center;
+    background-color: #5a795d;
+    border: 2px solid #2e4630;
+    color: #111;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  .hidden-input:checked + .chonky-btn svg.icon {
+    fill: #cfeed9;
+    stroke: #a3bdab;
+  }
+  
+  .hidden-input:checked + .chonky-btn + .text-label {
+    border-color: #c7d8cc;
+    background-color: #e9fff0;
+    box-shadow: 0 5px 25px #e9fff0;
+    color: #6B706D;
+  }
+  
+  .hidden-input:checked + .chonky-btn {
+    background-color: #e9fff0;
+    border-color: #e9fff0;
+    transform: translate(0, .75rem);
+    box-shadow: 0 5px 25px #e9fff0;
+  }
+  
+  .chonky-btn:active {
+    transform: translate(0, .75rem);
+  }
+  
+  .hidden-input:checked + .chonky-btn::before,
+  .chonky-btn:active::before {
+    transform: translate3d(0, 0, -1rem);
+  }
+  
+  @media (hover:hover) {
+    .chonky-btn:hover,
+    .text-label:hover,
+    .chonky-btn.hovering {
+      background-color: #8cb291;
+    }
+    /* .chonky-btn:hover:not(:active), */
+    .hidden-input:not(:checked) + .chonky-btn:hover:not(:active),
+    .chonky-btn.hovering {
+      transform: translate(0, .05rem);
+    }
+  
+    .chonky-btn:hover + .text-label {
+      background-color: #8cb291;
+    }
+  
+    .chonky-btn:hover svg.icon {
+      fill: #47634a;
+      stroke: #2e4630;
+    }
+  }
+  
+  
