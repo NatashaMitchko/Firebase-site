@@ -3,7 +3,7 @@ body {
     background-image: url(/assets/hand-drawn-halloween-background/5852824.jpg);
     background-size: cover;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
 }
 
 html,
@@ -12,7 +12,7 @@ body {
 }
 
 h1, h2 {
-    color: greenyellow;
+    color: #42d04f;
     text-shadow: rgba(0,0,0,1) 0px 10px 28px;
 }
 
@@ -31,6 +31,14 @@ h1 {
 .spooky {
     position: absolute;
     width: 40vw;
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #stickable-section {

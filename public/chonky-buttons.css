@@ -4,6 +4,7 @@
     justify-content: center;
     gap: 3rem;
     padding: 1rem;
+    flex: none;
   }
   
   .chonky-btn-wrap {
