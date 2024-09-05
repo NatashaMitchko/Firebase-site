@@ -2,15 +2,17 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 3rem;
-    padding: 1rem;
+    gap: 1rem;
+    padding: 2rem 0;
     flex: none;
+    flex-wrap: wrap;
   }
   
   .chonky-btn-wrap {
     display: flex;
     flex-direction: column;
     gap: .25rem;
+    margin-top: .25rem;
   }
   
   .hidden-input {
@@ -27,8 +29,6 @@
     transition: transform 50ms ease;
     transform: translate3d(0, 0, 1rem);
     cursor: pointer;
-    min-width: 8rem;
-    min-height: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,8 +52,7 @@
   }
   
   .chonky-btn svg.icon {
-    width: 3rem;
-    height: 3rem;
+
     stroke: #111;
     fill: #222;
   }
@@ -120,4 +119,36 @@
     }
   }
   
-  
+  @media (min-width: 768px) {
+    .chonky-btn {
+      min-width: 8rem;
+      min-height: 5rem;
+    }
+
+    .chonky-btn svg.icon {
+      width: 6rem;
+      height: 4.5rem;
+    }
+
+    .spooky {
+      position: absolute;
+      width: 40vw;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .text-label {
+      display: none;
+    }
+
+    .chonky-btn svg.icon {
+      width: 4rem;
+      height: 3rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .chonky-btn-wrap {
+      width: calc(33% - 2rem);
+    }
+  }
