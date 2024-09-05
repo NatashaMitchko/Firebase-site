@@ -104,11 +104,11 @@
     }
 
     var div = document.createElement('div');
-    div.setAttribute("style", "height:130px;width:80px");
+    div.setAttribute("style", "height:120px;width:90px");
 
     var img = document.createElement('img');
     img.src = src;
-    img.setAttribute("style", "width:130px;height:80px;");
+    img.setAttribute("style", "width:120px;height:90px;");
     if ( alt != null ) img.alt = alt;
     if ( title != null ) img.title = title;
   
@@ -122,11 +122,9 @@
     let sticker_type = document.querySelector('input[name="sticker"]:checked').value;
     console.log(sticker_type);
 
-    // let p = document.createElement('span');
-    // p.innerHTML = 'HI';
     let p = create_sticker(sticker_type);
-    var left = e.pageX - 65;
-    var top = e.pageY - 40;
+    var left = e.pageX - 60;
+    var top = e.pageY - 45;
 
     p.firstChild
 
@@ -135,19 +133,6 @@
     stickable.append(p);
 
   })
-
-
-  // let sticker = create_sticker(sticker_type)
-  //   // document.createElement(sticker);
-  //   stickable.append(sticker);
-
-  //   console.log(e.pageX, e.pageY);
-
-  //   var marginLeft =  e.pageX - (sticker.width / 2);
-  //   var marginTop = e.pageY - (sticker.height / 2);
-
-  //   sticker.setAttribute("marginLeft", marginLeft);
-  //   sticker.setAttribute("marginTop", marginTop);
 
 </script>
 </body>
