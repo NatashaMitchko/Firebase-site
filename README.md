@@ -1,4 +1,4 @@
-# [natashamitchko.com](https://natashamitchko.com/)
+# [www.natashamitchko.com](https://www.natashamitchko.com/)
 
 
 Cookbook is now served from a flask app at cookbook.natashamitchko.com
