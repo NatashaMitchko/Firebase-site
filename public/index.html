@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="halloween.css">
   <script src="main.js" type="text/javascript"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
   <div style="flex:1;">
@@ -80,6 +81,8 @@
     })
   })
 
+  var first_sticker = true;
+
   function create_sticker(type) {
     var src, alt, title
     if (type == 'bat') {
@@ -113,7 +116,15 @@
     if ( alt != null ) img.alt = alt;
     if ( title != null ) img.title = title;
   
-    div.appendChild(img)
+    if ( first_sticker ) {
+      var href = document.createElement('a');
+      href.setAttribute("href", "http://cookbook.natashamitchko.com");
+      href.appendChild(img);
+      div.appendChild(href);
+      first_sticker = false;
+    } else {
+      div.appendChild(img);
+    }
     return div;
 }
 
@@ -130,6 +141,7 @@
     p.firstChild
 
     console.log(e.pageX, e.pageY);
+
     p.setAttribute("style", `position:absolute;left:${left}px;top:${top}px;`);
     stickable.append(p);
 
@@ -140,4 +152,3 @@
 </html>
 
 
-<!-- <a href="https://www.freepik.com/free-vector/hand-drawn-halloween-background_17241418.htm#query=halloween%20background&position=3&from_view=keyword&track=ais_hybrid&uuid=91accc62-8e79-4028-9748-377c08bf1d79">Image by freepik</a> -->

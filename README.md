@@ -1,5 +1,10 @@
 # [natashamitchko.com](https://natashamitchko.com/)
 
+
+Cookbook is now served from a flask app at cookbook.natashamitchko.com
+
+Old:
+
 HTML for the cookbook is rendered with `staticjinja build` at project root.
 Templates are stored in the templates directory and rendered to `cookbook` (not checked in)
 
