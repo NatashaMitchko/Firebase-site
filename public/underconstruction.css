@@ -1,0 +1,11 @@
+.construction-banner {
+    background-color: #cddc39;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.construction-text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    text-shadow: none;
+}
