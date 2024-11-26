@@ -1,5 +1,11 @@
 .construction-banner {
-    background-color: #cddc39;
+    background: repeating-linear-gradient(
+        45deg,
+        red,
+        red 10px,
+        white 10px,
+        white 20px
+    );
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
@@ -8,4 +14,6 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
     text-shadow: none;
+    background-color: white;
+    margin-top: 8px;
 }
