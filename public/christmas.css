@@ -1,12 +1,14 @@
 html {
     --candy-cane: 20px;
     --red: #aa253c;
+    --dark-red: #310505;
 }
 
 body {
-    background-image: url(/assets/christmas/workshop.jpg);
+    /* background-image: url(/assets/christmas/workshop.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    background-color: #aa253c;
 }
 
 #game-title {
@@ -22,6 +24,30 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+
+.mountains-of-christmas-regular {
+    font-family: "Mountains of Christmas", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mountains-of-christmas-bold {
+    font-family: "Mountains of Christmas", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.shantell-sans-christmas {
+    font-family: "Shantell Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "BNCE" 0,
+        "INFM" 0,
+        "SPAC" 0;
+}
+
 /* 
 .container {
     display: flex;
@@ -31,7 +57,6 @@ body {
 } */
 
 .page-content {
-    padding-top: var(--candy-cane);
     padding-bottom: var(--candy-cane);
     display: flex;
     justify-content: center;
@@ -46,6 +71,8 @@ body {
     align-content: center;
     text-align: center;
     width: 100%;
+    background-color: rgba(255, 177, 183, 0.8);
+    color: var(--dark-red)
 }
 
 .player-instructions {

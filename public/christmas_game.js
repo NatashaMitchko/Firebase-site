@@ -5,7 +5,7 @@ function catAction(catEl) {
         catEl.dataset.state = "inactive";
         const sit = document.getElementById('cat-sit').content.cloneNode(true);
         catEl.replaceChildren(sit);  
-    }, 250)
+    }, 100)
 }
 
 
@@ -16,7 +16,7 @@ function dogAction(dogEl) {
         dogEl.dataset.state = "inactive";
         const sit = document.getElementById('dog-sit').content.cloneNode(true);
         dogEl.replaceChildren(sit);
-    }, 250);
+    }, 150);
 }
 
 window.addEventListener('keydown', function(e) {
