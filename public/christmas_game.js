@@ -1,37 +1,36 @@
-
-const CatKey = "f";
-const DogKey = "j";
-const Dog = document.getElementById("DogPlayer");
-const Cat = document.getElementById("CatPlayer");
-
-function catAction() {
-    const Cat = document.getElementById("CatPlayer");
-    Cat.src = "assets/christmas/cat/swipe.svg"
+function catAction(catEl) {
+    const swipe = document.getElementById('cat-swipe').content.cloneNode(true);
+    catEl.replaceChildren(swipe);
     setTimeout(() => {
-        Cat.src = "assets/christmas/cat/sit_1.svg"
-        console.log("revert cat");
-      }, 250);
-};
+        catEl.dataset.state = "inactive";
+        const sit = document.getElementById('cat-sit').content.cloneNode(true);
+        catEl.replaceChildren(sit);  
+    }, 250)
+}
 
 
-function dogAction() {
-    const Dog = document.getElementById("DogPlayer");
-    Dog.src = "assets/christmas/dog/bite.svg"
-    Dog.style.marginBottom = "-195px";
+function dogAction(dogEl) {
+    const bite = document.getElementById('dog-bite').content.cloneNode(true);
+    dogEl.replaceChildren(bite);
     setTimeout(() => {
-        Dog.src = "assets/christmas/dog/sit_1.svg"
-        Dog.style.marginBottom = "0px";
-        console.log("revert dog");
-      }, 250);
-};
+        dogEl.dataset.state = "inactive";
+        const sit = document.getElementById('dog-sit').content.cloneNode(true);
+        dogEl.replaceChildren(sit);
+    }, 250);
+}
 
 window.addEventListener('keydown', function(e) {
-    if (e.key == CatKey) {
-        console.log("cat");
-        catAction();
-    } else if (e.key == DogKey) {
-        console.log("dog");
-        dogAction();
+    const CatKey = "f";
+    const DogKey = "j";
+    const catEl = document.getElementById('cat-friend');
+    const dogEl = document.getElementById('dog-friend');
+
+    if (e.key == CatKey && catEl.dataset.state === 'inactive') {
+        catEl.dataset.state = "active";
+        catAction(catEl);
+    } else if (e.key == DogKey && dogEl.dataset.state === 'inactive') {
+        dogEl.dataset.state = "active";
+        dogAction(dogEl);
     }
 });
 
@@ -47,7 +46,7 @@ window.addEventListener('load', function() {
         clearInterval(id);
         id = setInterval(frame, 10);
         function frame() {
-          if (pos >= screenWidth) {
+          if (pos >= screenWidth - 10) {
             console.log("end of the screen");
             clearInterval(id);
           } else {

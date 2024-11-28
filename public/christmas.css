@@ -3,6 +3,12 @@ html {
     --red: #aa253c;
 }
 
+body {
+    background-image: url(/assets/christmas/workshop.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
 #game-title {
     font-size: xxx-large;
 }
@@ -16,13 +22,13 @@ html {
     font-weight: 400;
     font-style: normal;
 }
-
+/* 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+} */
 
 .page-content {
     padding-top: var(--candy-cane);
@@ -59,6 +65,36 @@ html {
     position: absolute;
     bottom: 30%;
     z-index: 10;
+}
+
+.cat-friend {
+    width: 222px;
+    height: 248px;
+}
+
+.cat-friend[data-state="inactive"] svg {
+    margin-top: 20px;
+}
+
+.cat-friend[data-state="active"] {
+    width: 190px;
+    margin-right: 0px;
+    margin-left: 32px
+}
+
+.cat-friend[data-state="active"] svg {
+    margin-top: 20px;
+}
+
+.dog-friend {
+    width: 350px;
+    height: 248px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.dog-friend[data-state="active"] svg {
+    margin-bottom: -75px;
 }
 
 .conveyor-belt {
