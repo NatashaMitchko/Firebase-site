@@ -16,14 +16,23 @@
       <div class="candy-cane"></div>
       <div class="page-content">
         <div class="main-text">
-          <h1 id="game-title" class="mountains-of-christmas-bold">Santa Paw's Workshop: Quality Control</h1>
-          <h2 id="game-subtitle" class="pacifico-regular">Check the quality of as many items as you can!</h2>
-          <div class="player-instructions shantell-sans-christmas">
-            <p>F to check ornaments</p>
-            <p>J to taste treats</p>
+          <h1 id="game-title" class="pacifico-regular">Santa Paw's Workshop: Quality Control</h1>
+          <h2 id="game-subtitle" class="shantell-sans-christmas">Check the quality of as many items as you can!</h2>
+          <div class="instructions shantell-sans-christmas">
+            <div class="player-instructions">
+              <span class="keyboard-key">F</span>
+              <p>to check ornaments</p>
+            </div>
+            <div class="player-instructions">
+              <span class="keyboard-key">J</span>
+              <p>to taste treats</p>
+            </div>
           </div>
         </div>
         <div class="animal-friends">
+          <div id="overlay">
+            <button id="start-game-button" class="pacifico-regular"> Start </button>
+          </div>
           <div class="cat-friend" id="cat-friend" data-state="inactive">
             <svg viewBox="1657.88 267.499 190.118 212.682" xmlns="http://www.w3.org/2000/svg">
               <path style="fill:#9e9e9e;fill-opacity:1;fill-rule:nonzero;opacity:1;stroke:none" d="M1740.78 468.322c-12.01-58 11.99-123 19-128-1.01-8 0-17 4-25s1.99-24 7-29c3.16-3.162 13 14 13 14s18.99-3 23 0c1.99-4 6-15 9-17 2.99-2 10.99 24 10.99 24s6.01 30 5.01 35c2.99 11 33 64 2.99 125-17.99 9-74.99 20-93.99 1z"/>
@@ -61,7 +70,7 @@
             </svg>
           </div>
         </div>
-        <div class="conveyor-belt footer">
+        <div id="conveyor-belt" class="conveyor-belt footer">
           <div id="moving" class="element"></div>
         </div>
       </div>

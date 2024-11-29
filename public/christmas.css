@@ -48,14 +48,6 @@ body {
         "SPAC" 0;
 }
 
-/* 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} */
-
 .page-content {
     padding-bottom: var(--candy-cane);
     display: flex;
@@ -75,13 +67,57 @@ body {
     color: var(--dark-red)
 }
 
-.player-instructions {
+.instructions {
     width: 100%;
     height: 20%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 50px;
+}
+
+.player-instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keyboard-key {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--dark-red);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#start-game-button {
+    position: absolute;
+    padding: 10px 20px;
+    top: 25%;
+    left: 50%;
+    color: white;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: green;
+    border: solid 2px white;
+    font-size: xxx-large;
+    cursor: pointer;
 }
 
 .animal-friends {
@@ -91,7 +127,7 @@ body {
     justify-content: space-around;
     position: absolute;
     bottom: 30%;
-    z-index: 10;
+    z-index: 3;
 }
 
 .cat-friend {
@@ -126,9 +162,40 @@ body {
 
 .conveyor-belt {
     background-color: green;
+    background-size: 100px 100px;
     height: 30px;
     width: 100%;
     position: relative;
+
+    background-image: -webkit-linear-gradient(45deg, darkgreen 25%, transparent 25%, transparent 50%, darkgreen 50%, darkgreen 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, darkgreen 25%, transparent 25%, transparent 50%, darkgreen 50%, darkgreen 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, darkgreen 25%, transparent 25%, transparent 50%, darkgreen 50%, darkgreen 75%, transparent 75%, transparent);
+}
+
+@-webkit-keyframes conveyor-belt-stripes {
+    from {
+        background-position: 0 100px;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes conveyor-belt-stripes {
+    from {
+        background-position: 0 100px;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+.conveyor-belt-animation {
+    -webkit-animation: conveyor-belt-stripes 3s linear infinite;
+    -o-animation: conveyor-belt-stripes 3s linear infinite;
+    animation: conveyor-belt-stripes 3s linear infinite;
 }
 
 .element {
