@@ -135,7 +135,7 @@ class GameObject {
             this.playableRangeLeft = rect.left;
             this.playableRangeRight = rect.right;
         }
-        
+
         this.DOMelem = obj;
 
         this.inBounds = true;
@@ -153,11 +153,12 @@ class GameObject {
     changeSVG() {
         if (this.type == ornament) {
             const newSVG = this.ornamentBroken.content.cloneNode(true);
-            this.DOMelem.replaceChildren(newSVG)
+            this.DOMelem.replaceChildren(newSVG);
         }
         else if (this.type == bone) {
             const newSVG = this.boneEaten.content.cloneNode(true);
-            this.DOMelem.replaceChildren(newSVG)
+            this.DOMelem.classList.add("half-bone");
+            this.DOMelem.replaceChildren(newSVG);
         }
     }
 

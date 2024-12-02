@@ -230,6 +230,10 @@ body {
     z-index: 3;
 }
 
+.half-bone {
+    width: 50px;
+}
+
 .candy-cane {
     background: repeating-linear-gradient(30deg,
             var(--red),
