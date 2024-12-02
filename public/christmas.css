@@ -201,8 +201,15 @@ body {
 .element {
     height: 10px;
     width: 10px;
-    background-color: #aa253c;
     position: absolute;
+}
+
+.ornament {
+    background-color: red;
+}
+
+.bone {
+    background-color: white;
 }
 
 .candy-cane {
