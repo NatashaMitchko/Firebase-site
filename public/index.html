@@ -30,9 +30,10 @@
           </div>
         </div>
         <div class="animal-friends">
-          <div id="overlay">
-            <button id="start-game-button" class="pacifico-regular"> Start </button>
+          <div id="overlay" class="overlay">
+            <button id="start-game-button" class="start-game-button pacifico-regular"> Start </button>
           </div>
+          <div id="score-card" class="score-card pacifico-regular"><p>Score: <span id="score">0</span></p></div>
           <div class="cat-friend" id="cat-friend" data-state="inactive">
             <svg viewBox="1657.88 267.499 190.118 212.682" xmlns="http://www.w3.org/2000/svg">
               <path style="fill:#9e9e9e;fill-opacity:1;fill-rule:nonzero;opacity:1;stroke:none" d="M1740.78 468.322c-12.01-58 11.99-123 19-128-1.01-8 0-17 4-25s1.99-24 7-29c3.16-3.162 13 14 13 14s18.99-3 23 0c1.99-4 6-15 9-17 2.99-2 10.99 24 10.99 24s6.01 30 5.01 35c2.99 11 33 64 2.99 125-17.99 9-74.99 20-93.99 1z"/>
@@ -142,6 +143,58 @@
         <path style="fill:none;opacity:1;stroke:#413a38;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:1" d="M1063.19 344.14c-.07 2.476 1.12 5.744 3.46 6.27 1.95.439 4.19-1.326 4.71-2.015 1.31-1.732 2.9-3.905 2.85-6.064-.32 1.845-.9 5.081.08 6.723.32.534 1.41 2.367 4.33 3.025 3.35.751 4.36-2.22 5.53-4.907"/>
         <path style="fill:#9e9e9e;fill-opacity:1;fill-rule:nonzero;opacity:1;stroke:none" d="M1065.12 423.607c1.4 3.998 24.87 79.952 29.8 84.955 4.94 5.004 10.25 2.018 10.73-2.642.49-4.66-28.16-83.288-28.16-83.288s-13.78-3.023-12.37.975zM1032.55 420.955s-4.5 57.12-1.91 60.384c2.6 3.264 7.46 4.636 10.72 2.873 3.26-1.762 4.36-63.713 4.36-63.713l-13.17.456z"/>
         <path style="fill:#413a38;fill-opacity:1;fill-rule:nonzero;opacity:1;stroke:none" d="M1088.74 325.514c-3.56-.869-5.33 10.646-1.91 10.778 4.81.184 5.69-9.858 1.91-10.778zM1065.97 322.417c-3.86-.89-5.71 10.785-2.01 10.927 5.2.2 6.09-9.984 2.01-10.927zM1070.68 339.39c-.56-.725.07-1.854.98-1.789l5.9.416c1.04.073 1.38 1.427.53 2.145l-2.56 2.178c-.87.744-2.11.657-2.75-.194l-2.1-2.756z"/>
+      </svg>
+    </template>
+    <template id="ornament">
+      <svg x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Ornament">
+          <linearGradient x1="12.3579" y1="4.82409" x2="4.77609" y2="12.5318" gradientUnits="userSpaceOnUse" id="am2">
+            <stop style="stop-color:#bfbfbf;stop-opacity:1;"/>
+            <stop offset="1" style="stop-color:#747474;stop-opacity:1;"/>
+          </linearGradient>
+          <g id="Path">
+            <path style="fill:url(#am2);fill-opacity:1;fill-rule:evenodd;opacity:1;stroke:none;" d="M8.08179,0.500004 C8.08179,0.500004,16.634,9.14817,16.634,9.14817 C16.634,9.14817,9.05219,16.8559,9.05219,16.8559 C9.05219,16.8559,0.499999,8.2077,0.499999,8.2077 C0.499999,8.2077,8.08179,0.500004,8.08179,0.500004 z"/>
+            <path style="fill:none;opacity:1;stroke:#9e9e9e;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-width:1;" d="M8.08179,0.500004 C8.08179,0.500004,16.634,9.14817,16.634,9.14817 C16.634,9.14817,9.05219,16.8559,9.05219,16.8559 C9.05219,16.8559,0.499999,8.2077,0.499999,8.2077 C0.499999,8.2077,8.08179,0.500004,8.08179,0.500004 z"/>
+          </g>
+          <linearGradient x1="49.5" y1="25.6871" x2="2.52769" y2="25.6871" gradientUnits="userSpaceOnUse" id="am4">
+            <stop style="stop-color:#59c1ff;stop-opacity:1;"/>
+            <stop offset="1" style="stop-color:#1170e2;stop-opacity:1;"/>
+          </linearGradient>
+          <g id="Path">
+            <path style="fill:url(#am4);fill-opacity:1;fill-rule:evenodd;opacity:1;stroke:none;" d="M26.0138,1.87426 C38.9849,1.87426,49.5,12.5356,49.5,25.6871 C49.5,38.8386,38.9849,49.5,26.0138,49.5 C13.0428,49.5,2.52769,38.8386,2.52769,25.6871 C2.52769,12.5356,13.0428,1.87426,26.0138,1.87426 z"/>
+          </g>
+        </g>
+      </svg>      
+    </template>
+    <template id="ornament-broken">
+      <svg x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Ornament">
+          <linearGradient x1="12.3579" y1="4.82409" x2="4.77609" y2="12.5318" gradientUnits="userSpaceOnUse" id="am2">
+            <stop style="stop-color:#bfbfbf;stop-opacity:1;"/>
+            <stop offset="1" style="stop-color:#747474;stop-opacity:1;"/>
+          </linearGradient>
+          <g id="Path">
+            <path style="fill:url(#am2);fill-opacity:1;fill-rule:evenodd;opacity:1;stroke:none;" d="M8.08179,0.500004 C8.08179,0.500004,16.634,9.14817,16.634,9.14817 C16.634,9.14817,9.05219,16.8559,9.05219,16.8559 C9.05219,16.8559,0.499999,8.2077,0.499999,8.2077 C0.499999,8.2077,8.08179,0.500004,8.08179,0.500004 z"/>
+            <path style="fill:none;opacity:1;stroke:#9e9e9e;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-width:1;" d="M8.08179,0.500004 C8.08179,0.500004,16.634,9.14817,16.634,9.14817 C16.634,9.14817,9.05219,16.8559,9.05219,16.8559 C9.05219,16.8559,0.499999,8.2077,0.499999,8.2077 C0.499999,8.2077,8.08179,0.500004,8.08179,0.500004 z"/>
+          </g>
+          <linearGradient x1="56" y1="26" x2="2.52769" y2="26" gradientUnits="userSpaceOnUse" id="am4">
+            <stop style="stop-color:#59c1ff;stop-opacity:1;"/>
+            <stop offset="1" style="stop-color:#1170e2;stop-opacity:1;"/>
+          </linearGradient>
+          <g id="Compound Group">
+            <path style="fill:url(#am4);fill-opacity:1;fill-rule:evenodd;opacity:1;stroke:none;" d="M34.051,3.30506 C31.5436,2.37927,28.8369,1.87426,26.0138,1.87426 C13.0428,1.87426,2.52769,12.5356,2.52769,25.6871 C2.52769,38.1586,11.9835,48.3909,24.0227,49.4156 C24.0227,49.4156,30,46,30,46 C30,46,25,41,25,41 C25,41,34,35,34,35 C34,35,25,29,25,29 C25,29,34,22,34,22 C34,22,26,18,26,18 C26,18,33,11,33,11 C33,11,26,5,26,5 C26,5,34.051,3.30506,34.051,3.30506 z"/>
+          </g>
+        </g>
+      </svg>
+    </template>
+    <template id="bone">
+      <svg viewBox="-0.005 1.058 99.006 48.949" xmlns="http://www.w3.org/2000/svg">
+        <path style="fill:#c6b199;fill-opacity:1;fill-rule:nonzero;opacity:1;stroke:#c69c6d;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-width:1" d="M15.092 26.965S-.761 21.908.581 16.375C1.92 10.84 9.97 3.925 15.335 3.925S25.822 17.28 25.822 17.28l47.189 1.86s1.584-13.356 8.048-16.6c8.09-4.06 17.68 4.627 17.437 11.067-.383 10.156-13.656 14.74-13.656 14.74s9.874 7.87 9.632 15.694c-.23 7.394-10.354 5.61-17.437 4.15-6.707-1.383-5.608-12.927-5.608-12.927L28.5 32.5s-1.336 15.215-6.701 15.215c-3.866 0-12.072 0-14.755-6.917-1.282-3.306 8.048-13.833 8.048-13.833z"/>
+      </svg>
+    </template>
+    <template id="bone-eaten">
+      <svg viewBox="-0.005 3.424 55.005 44.791" xmlns="http://www.w3.org/2000/svg">
+        <path style="fill:#c6b199;fill-opacity:1;fill-rule:nonzero;opacity:1;stroke:#c69c6d;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-width:1" d="M15.092 26.965S-.761 21.908.581 16.375C1.92 10.84 9.97 3.925 15.335 3.925S25.822 17.28 25.822 17.28L50.5 18.5s-3 2-7 3c4.067 1.017 7.87 3.413 11 5-3.13 1.413-6.558 3.017-10 4 3.595 1.582 8 4 8 4l-24-2s-1.336 15.215-6.701 15.215c-3.866 0-12.072 0-14.755-6.917-1.282-3.306 8.048-13.833 8.048-13.833z"/>
       </svg>
     </template>
   </body>

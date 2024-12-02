@@ -8,6 +8,26 @@
 //
 // A Christmas Game by Natasha Mitchko (2024)
 
+// console.log(`
+// Welcome to my website! What are you doing over here in the dev tools? No cheating allowed!
+
+// But if you want to check out my github to see previous holiday games run the following function:
+
+// seeAwesomeStuffOnGithub();
+
+// or maybe you're looking for a recipe? Try:
+
+// natashasCookbook();
+// `);
+
+// function seeAwesomeStuffOnGithub() {
+//     window.open("https://github.com/NatashaMitchko/Firebase-site", '_blank').focus();
+// }
+
+// function natashasCookbook() {
+//     window.open("http://cookbook.natashamitchko.com", '_blank').focus();
+// }
+
 let ornament = "ornament";
 let bone = "bone";
 
@@ -60,6 +80,7 @@ function startGame() {
     console.log("Game Started");
 
     overlayOff();
+    showScoreCard();
     conveyorOn();
 
     // Game Loop
@@ -68,6 +89,10 @@ function startGame() {
 
 function overlayOff() {
     document.getElementById("overlay").style.display = "None";
+}
+
+function showScoreCard() {
+    document.getElementById("score-card").style.display = "block";
 }
 
 function conveyorOn() {
@@ -80,32 +105,43 @@ function conveyorOff() {
 }
 
 class GameObject {
+    ornamentTemplate = document.getElementById("ornament");
+    ornamentBroken = document.getElementById("ornament-broken");
+    boneTemplate = document.getElementById("bone");
+    boneEaten = document.getElementById("bone-eaten");
+
     constructor(type) {
         this.playable = true;
         this.score = 0; // 0 or 1 - score is adjusted by level in main game loop update
 
         var obj = document.createElement('div');
-        obj.classList.add("element");
-        obj.classList.add(type); // styling
-
-        this.DOMelem = obj;
         this.type = type;
-
-        this.inBounds = true;
-        this.posX = 0; // don't know Y yet because of height of svg situation
 
         if (this.type == ornament) {
             this.animal_friend = document.getElementById('cat-friend');
-            // calculate playable range
-            this.playableRangeLeft = 0;
-            this.playableRangeRight = 0;
+            obj.classList.add(ornament);
+            obj.appendChild(this.ornamentTemplate.content.cloneNode(true));
+
+            let rect = this.animal_friend.getBoundingClientRect();
+            this.playableRangeLeft = rect.left;
+            this.playableRangeRight = rect.right;
         }
-        else if (this.type == "bone") {
+        else if (this.type == bone) {
             this.animal_friend = document.getElementById('dog-friend');
-            // calculate playable range
-            this.playableRangeLeft = 0;
-            this.playableRangeRight = 0;
+            obj.appendChild(this.boneTemplate.content.cloneNode(true));
+            obj.classList.add(bone);
+
+            let rect = this.animal_friend.getBoundingClientRect();
+            this.playableRangeLeft = rect.left;
+            this.playableRangeRight = rect.right;
         }
+        
+        this.DOMelem = obj;
+
+        this.inBounds = true;
+        this.posX = 0;
+
+
         this.createDOMelement();
     }
 
@@ -114,13 +150,23 @@ class GameObject {
         conveyor.appendChild(this.DOMelem);
     }
 
+    changeSVG() {
+        if (this.type == ornament) {
+            const newSVG = this.ornamentBroken.content.cloneNode(true);
+            this.DOMelem.replaceChildren(newSVG)
+        }
+        else if (this.type == bone) {
+            const newSVG = this.boneEaten.content.cloneNode(true);
+            this.DOMelem.replaceChildren(newSVG)
+        }
+    }
+
     update() {
         let width = window.screen.width;
         // when we reach the end, remove the element from the DOM and set inBounds to false so Game.update()
         // can read it and remove this obejct from active objects on the next loop
         if (this.posX >= width) {
             this.DOMelem.remove();
-            console.log("removed at end of screen");
             this.inBounds = false;
         }
         // if the obejct is playable and in the playable range, check if it's animal friend got it
@@ -128,7 +174,7 @@ class GameObject {
             this.posX >= this.playableRangeLeft && this.posX <= this.playableRangeRight &&
             this.animal_friend.dataset.state == "active"
         ) {
-            // change svg!
+            this.changeSVG();
             this.playable = false;
             this.score = 1;
         }
@@ -163,7 +209,11 @@ class Game {
         this.frameCounter += 1;
 
         for (let i = 0; i < this.activeObjects.length; i++) {
-            this.score += (this.level * this.activeObjects[i].score);
+            let scoreToAdd = this.level * this.activeObjects[i].score;
+            if (scoreToAdd != 0) {
+                this.score = this.score + (this.level * this.activeObjects[i].score);
+                document.getElementById("score").textContent = this.score;
+            }
             this.activeObjects[i].score = 0; // only count score once
 
             this.activeObjects[i].update();
