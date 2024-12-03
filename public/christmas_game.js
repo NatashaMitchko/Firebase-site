@@ -21,7 +21,7 @@ natashasCookbook();
 `);
 
 function seeCodeOnGithub() {
-    window.open("https://github.com/NatashaMitchko/Firebase-site", '_blank').focus();
+    window.open("https://github.com/NatashaMitchko/Firebase-site/blob/master/public/christmas_game.js", '_blank').focus();
 }
 
 function natashasCookbook() {
