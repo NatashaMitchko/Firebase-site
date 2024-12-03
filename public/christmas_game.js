@@ -8,25 +8,25 @@
 //
 // A Christmas Game by Natasha Mitchko (2024)
 
-// console.log(`
-// Welcome to my website! What are you doing over here in the dev tools? No cheating allowed!
+console.log(`
+Welcome to my website! What are you doing over here in the dev tools? You'd better not be cheating!
 
-// But if you want to check out my github to see previous holiday games run the following function:
+But if you want to check out the code I wrote for this amazing christmas game run the following function in the console:
 
-// seeAwesomeStuffOnGithub();
+seeCodeOnGithub();
 
-// or maybe you're looking for a recipe? Try:
+or maybe you're looking for a recipe? Try:
 
-// natashasCookbook();
-// `);
+natashasCookbook();
+`);
 
-// function seeAwesomeStuffOnGithub() {
-//     window.open("https://github.com/NatashaMitchko/Firebase-site", '_blank').focus();
-// }
+function seeCodeOnGithub() {
+    window.open("https://github.com/NatashaMitchko/Firebase-site", '_blank').focus();
+}
 
-// function natashasCookbook() {
-//     window.open("http://cookbook.natashamitchko.com", '_blank').focus();
-// }
+function natashasCookbook() {
+    window.open("http://cookbook.natashamitchko.com", '_blank').focus();
+}
 
 let ornament = "ornament";
 let bone = "bone";
@@ -99,9 +99,13 @@ function conveyorOn() {
     document.getElementById("conveyor-belt").classList.add("conveyor-belt-animation");
 }
 
-// TODO: use this when game is over
 function conveyorOff() {
     document.getElementById("conveyor-belt").classList.remove("conveyor-belt-animation");
+}
+
+function showWinnerScreen(finalScore) {
+    document.getElementById("final-score").textContent = finalScore;
+    document.getElementById("winner-screen").classList.remove("hide-winner-screen");
 }
 
 class GameObject {
@@ -227,9 +231,32 @@ class Game {
         // remove game pieces at the end of the screen
         this.activeObjects = this.activeObjects.filter((obj) => obj !== null);
 
+        let speed;
+        if (this.score <= 10) {
+            speed = fps * 3;
+            this.level = 1;
+        }
+        else if (this.score <= 25) {
+            speed = fps * 2;
+            this.level = 2;
+        }
+        else if (this.score <= 50) {
+            speed = fps;
+            this.level = 3;
+        }
+        else if (this.score <= 75) {
+            speed = Math.round(fps * 0.8);
+            this.level = 4;
+        }
+        else {
+            speed = fps * .4;
+            this.level = 5;
+        }
+
+
 
         // figure out if we should add a new object
-        if (this.frameCounter >= fps) { // this calculation could be more sophisticated
+        if (this.frameCounter >= speed) {
             this.activeObjects.push(spawnObject());
             this.frameCounter = 0;
         }
@@ -249,5 +276,12 @@ function gameLoop(timestamp) {
     fps = Math.round(1 / secondsPassed);
 
     qualityControlChristmasGame.update();
-    window.requestAnimationFrame(gameLoop);
+    let score  = document.getElementById("score").textContent;
+
+    if (score >= 200) {
+        conveyorOff();
+        showWinnerScreen(qualityControlChristmasGame.score);
+    } else {
+        window.requestAnimationFrame(gameLoop);
+    }
 }

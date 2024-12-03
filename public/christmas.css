@@ -5,9 +5,6 @@ html {
 }
 
 body {
-    /* background-image: url(/assets/christmas/workshop.jpg);
-    background-size: cover;
-    background-position: center; */
     background-color: #aa253c;
 }
 
@@ -102,7 +99,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .start-game-button {
@@ -118,6 +114,10 @@ body {
     border: solid 2px white;
     font-size: xxx-large;
     cursor: pointer;
+}
+
+.hide-winner-screen {
+    display: none;
 }
 
 .score-card {
