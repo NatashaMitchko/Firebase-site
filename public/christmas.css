@@ -168,12 +168,12 @@ body {
 .dog-friend {
     width: 350px;
     height: 248px;
-    display: flex;
-    align-items: flex-end;
+    /* display: flex;
+    align-items: flex-end; */
 }
 
 .dog-friend[data-state="active"] svg {
-    margin-bottom: -75px;
+    margin-top: 155px;
 }
 
 .conveyor-belt {

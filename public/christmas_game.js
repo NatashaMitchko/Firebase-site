@@ -277,7 +277,7 @@ function gameLoop(timestamp) {
     qualityControlChristmasGame.update();
     let score  = document.getElementById("score").textContent;
 
-    if (score >= 100) {
+    if (score >= 150) {
         conveyorOff();
         showWinnerScreen(qualityControlChristmasGame.score);
     } else {
