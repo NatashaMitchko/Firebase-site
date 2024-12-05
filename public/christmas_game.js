@@ -166,7 +166,7 @@ class GameObject {
         }
     }
 
-    update() {
+    update(level) {
         let width = window.screen.width;
         // when we reach the end, remove the element from the DOM and set inBounds to false so Game.update()
         // can read it and remove this obejct from active objects on the next loop
@@ -185,7 +185,7 @@ class GameObject {
         }
 
         // always move forward even if there isnt an element to move forward
-        this.posX += 2; // TODO: fix this calculation
+        this.posX += Math.round(2 + (level / 10)); // TODO: fix this calculation
         this.DOMelem.style.left = this.posX + 'px';
     }
 }
@@ -213,6 +213,28 @@ class Game {
     update() {
         this.frameCounter += 1;
 
+        let dispatchSpeed;
+        if (this.score < 10) {
+            dispatchSpeed = fps * 3;
+            this.level = 1;
+        }
+        else if (this.score < 25) {
+            dispatchSpeed = fps * 2;
+            this.level = 2;
+        }
+        else if (this.score < 50) {
+            dispatchSpeed = fps;
+            this.level = 3;
+        }
+        else if (this.score < 75) {
+            dispatchSpeed = Math.round(fps * 0.8);
+            this.level = 4;
+        }
+        else {
+            dispatchSpeed = fps * .6;
+            this.level = 5;
+        }
+
         for (let i = 0; i < this.activeObjects.length; i++) {
             let scoreToAdd = this.level * this.activeObjects[i].score;
             if (scoreToAdd != 0) {
@@ -221,7 +243,7 @@ class Game {
             }
             this.activeObjects[i].score = 0; // only count score once
 
-            this.activeObjects[i].update();
+            this.activeObjects[i].update(this.level);
 
             if (!this.activeObjects[i].inBounds) {
                 this.activeObjects[i] = null;
@@ -231,32 +253,9 @@ class Game {
         // remove game pieces at the end of the screen
         this.activeObjects = this.activeObjects.filter((obj) => obj !== null);
 
-        let speed;
-        if (this.score <= 10) {
-            speed = fps * 3;
-            this.level = 1;
-        }
-        else if (this.score <= 25) {
-            speed = fps * 2;
-            this.level = 2;
-        }
-        else if (this.score <= 50) {
-            speed = fps;
-            this.level = 3;
-        }
-        else if (this.score <= 75) {
-            speed = Math.round(fps * 0.8);
-            this.level = 4;
-        }
-        else {
-            speed = fps * .4;
-            this.level = 5;
-        }
-
-
 
         // figure out if we should add a new object
-        if (this.frameCounter >= speed) {
+        if (this.frameCounter >= dispatchSpeed) {
             this.activeObjects.push(spawnObject());
             this.frameCounter = 0;
         }
@@ -278,7 +277,7 @@ function gameLoop(timestamp) {
     qualityControlChristmasGame.update();
     let score  = document.getElementById("score").textContent;
 
-    if (score >= 200) {
+    if (score >= 100) {
         conveyorOff();
         showWinnerScreen(qualityControlChristmasGame.score);
     } else {
